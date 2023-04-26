@@ -2,19 +2,19 @@
   <div class="goods-container">
     <!-- 左侧图片区域 -->
     <div class="left">
-      <img src="https://yanxuan-item.nosdn.127.net/3a56a913e687dc2279473e325ea770a9.jpg" class="avatar" alt="">
+      <img :src="item.thumb" class="avatar" alt="">
     </div>
     <!-- 右侧商品区域 -->
     <div class="right">
       <!-- 标题 -->
-      <div class="title">低帮城市休闲户外鞋天然牛皮COOLMAX纤维</div>
+      <div class="title">{{ item.name }}</div>
       <div class="info">
         <!-- 单价 -->
-        <span class="price">￥128</span>
+        <span class="price">￥{{ item.price }}</span>
         <div class="btns">
           <!-- 按钮区域 -->
           <button class="btn btn-light">-</button>
-          <span class="count">1</span>
+          <span class="count">{{ item.count }}</span>
           <button class="btn btn-light">+</button>
         </div>
       </div>
@@ -27,6 +27,12 @@ export default {
   name: 'CartItem',
   methods: {
 
+  },
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
