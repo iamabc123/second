@@ -46,5 +46,14 @@ export default {
       })
     }
   },
-  getters: {}
+  getters: {
+    // 商品总数量 累加count
+    total (state) {
+      return state.list.reduce((sum, item) => sum + item.count, 0)
+    },
+    // 商品总价格 累加count * price
+    totalPrice (state) {
+      return state.list.reduce((sum, item) => sum + item.count * item.price, 0)
+    }
+  }
 }
